@@ -1,5 +1,5 @@
 import './Header.css'
-import '/src/components/Container.css'
+import Container from '/src/components/Container/Container'
 
 export default function Header(props) {
     let check = (tg) => {
@@ -8,14 +8,14 @@ export default function Header(props) {
         } else {
             return tg
         }
-     }
+    }
 
     if (props.page == 'main') {
         return (
 
             <>
                 <header className="header">
-                    <div className="container">
+                    <Container>
                         <h1 className="header__title">Harry Potter</h1>
                         <p className="header__text">View all characters from the Harry Potter universe</p>
                         <div className="search">
@@ -34,11 +34,11 @@ export default function Header(props) {
                                         <option data-value="Hufflepuff" defaultValue="Hufflepuff">Hufflepuff</option>
                                         <option data-value="Ravenclaw" defaultValue="Ravenclaw">Ravenclaw</option>
                                         <option data-value="Slytherin" defaultValue="Slytherin">Slytherin</option>
-                                    </select>   
+                                    </select>
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </Container>
                     <hr className="header__hr" />
                 </header>
             </>
@@ -47,11 +47,11 @@ export default function Header(props) {
         return (
             <>
                 <header className="header__liked">
-                    <div className="container">
+                    <Container>
                         <a onClick={() => { props.setPage('main') }} className="return__link">← Back To All</a>
                         <h1 className="header__title_liked">Liked ones</h1>
                         <p className="header__text">Your favorite characters from the Harry Potter universe.</p>
-                    </div>
+                    </Container>
                     <hr className="header__hr" />
                 </header>
             </>

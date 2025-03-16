@@ -1,5 +1,5 @@
 import './MainBlock.css'
-import '/src/components/Container.css'
+import Container from '/src/components/Container/Container'
 import { data } from '/src/data.js'
 import Card from '/src/components/Card/Card.jsx'
 import { useEffect } from 'react'
@@ -30,7 +30,7 @@ export default function MainBlock(props) {
         return (
             <>
                 <div className="main-block">
-                    <div className="container">
+                    <Container>
                         <div className="cards">
                             {data.slice(0, props.visibleCount).map((el) => (
                                 ((String(el.name).toLowerCase().includes(props.search.toLowerCase()) && props.search != '') && (String(el.house).toLowerCase().includes(props.filter.toLowerCase())) && props.search != '') &&
@@ -64,7 +64,7 @@ export default function MainBlock(props) {
                             ))}
 
                         </div>
-                    </div>
+                    </Container>
                     <button onClick={() => { props.setPage('liked') }} className='toLiked'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23" fill="none"> <path fillRule="evenodd" clipRule="evenodd" d="M11.9997 1.97108C18.6567 -4.87192 35.3007 7.10258 11.9997 22.5001C-11.3013 7.10408 5.34267 -4.87192 11.9997 1.97108Z" fill="#DC3545" /> </svg>
                         Show Liked
@@ -75,7 +75,7 @@ export default function MainBlock(props) {
     } else if (props.page == 'liked' && localStorage.cards != undefined && JSON.parse(localStorage.cards).length != 0) {
         return (
             <div className="main-block">
-                <div className="container">
+                <Container>
                     <div className="cards__liked">
                         {data.slice(0, props.visibleCount).map((el) => (
                             (localStorage.getItem('cards') != undefined) && (JSON.parse(localStorage.getItem('cards')).map((localElement) => (
@@ -90,23 +90,23 @@ export default function MainBlock(props) {
                             )))
                         ))}
                     </div>
-                </div>
+                </Container>
             </div>
         )
     } else if (props.page == 'liked' && (localStorage.cards == undefined) || empty) {
         return (
             <div className="main-block">
-                <div className="container">
+                <Container>
                     <p style={{ 'color': 'black', 'fontSize': '32px' }}>You haven't liked anything yet</p>
-                </div>
+                </Container>
             </div>
         )
     } else if (props.page == 'liked' && localStorage.cards != undefined && (JSON.parse(localStorage.cards).length == 0) || empty) {
         return (
             <div className="main-block">
-                <div className="container">
+                <Container>
                     <p style={{ 'color': 'black', 'fontSize': '32px' }}>You haven't liked anything yet</p>
-                </div>
+                </Container>
             </div>
         )
     }

@@ -1,8 +1,6 @@
 import './Card.css'
-import '/src/components/Container.css'
 import { useState } from 'react'
 let save = []
-
 
 export default function Card(props) {
     let [className, setClassName] = useState('')
