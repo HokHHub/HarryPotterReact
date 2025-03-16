@@ -1,0 +1,89 @@
+.heart-fill {
+    fill: transparent;
+    stroke: #DC3545;
+    transition: fill 0.5s ease-in-out;
+}
+
+.card__like_click .heart-fill {
+    fill: #DC3545;
+}
+
+.card__like_declick .heart-fill {
+    fill: none;
+}
+
+.card {
+    width: 334px;
+    position: relative;
+    height: 618px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--Stroke-light, #DEE2E6);
+    background: #FFF;
+
+    
+}
+
+.card__text {
+    padding: 24px 25px 24px 24px;
+    margin: 0;
+    color: var(--Heading-Title-Color, #152536);
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+
+}
+
+.card__text_name {
+    color: var(--Heading-Title-Color, #152536);
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.card__img {
+    width: 334px;
+    height: 402px;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px 4px 0px 0px;
+    display: block;
+}
+
+.card__like {
+    position: absolute;
+    top: 0;
+    right: -23px;
+    /* // max-width: 48px;
+    // max-height: 48px;
+    // flex-shrink: 0; */
+}
+
+#Group-1 {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        max-width: 320px;
+    }
+
+    .card__img {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .card {
+        max-width: 270px;
+    }
+
+    .card__img {
+        width: 270px;
+    }
+}
