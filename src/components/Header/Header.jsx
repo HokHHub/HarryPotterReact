@@ -24,7 +24,7 @@ export default function Header(props) {
                                 <p className="texts__filter texts__filter_last">School</p>
 
                             </div>
-                            <form className="form" action="POST">
+                            <form className="form" onSubmit={(event) => {event.preventDefault()}} action="POST">
                                 <input onKeyUp={(event) => (props.setSearch(event.target.value))} className="form__input" type="text" placeholder="Hermione" id="input" />
                                 <div>
                                     <p className="texts__filter texts__filter_mobile">School</p>
@@ -48,7 +48,7 @@ export default function Header(props) {
             <>
                 <header className="header__liked">
                     <Container>
-                        <a onClick={() => { props.setPage('main') }} className="return__link">← Back To All</a>
+                        <a onClick={() => { props.setPage('main'), props.setFilter(''), props.setSearch('') }} className="return__link">← Back To All</a>
                         <h1 className="header__title_liked">Liked ones</h1>
                         <p className="header__text">Your favorite characters from the Harry Potter universe.</p>
                     </Container>
